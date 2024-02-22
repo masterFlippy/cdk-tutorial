@@ -20,8 +20,13 @@ Uppgiften går ut på att skapa detta:
 
 - Se till att node 14.15.0 eller senare är installerat på datorn.
 - npm -g install typescript
-- Sätt upp [AWS CLI](https://aws.amazon.com/getting-started/guides/setup-environment/module-three/) och [CDK Toolkit](https://docs.aws.amazon.com/cdk/v2/guide/cli.html)
-- [aws configure video](https://www.youtube.com/watch?v=dZgLNL869YU&t=26s)
+- Sätt upp AWS CLI och CDK Toolkit
+
+#### AWS CLI setup och CDK ToolKit
+
+- För att installera AWS CLI [klicka här](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-version.html). Välj operativsystem och följ instruktionerna.
+- För att konfigurera AWS CLI [klicka här](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html#getting-started-quickstart-new-command). Välj sätt att konfigurera.
+- För att komma igång med CDK ToolKit [klicka här](https://docs.aws.amazon.com/cdk/v2/guide/cli.html)
 
 ## Skapa er React app
 
@@ -133,7 +138,7 @@ export class InfraStack extends cdk.Stack {
 
 ![Alt](img/infrastack.png "Title")
 
-- Sista steget är att uppdatera infra.ts i bin mappen med detta:
+- Sista steget är att uppdatera infra.ts i bin mappen med detta. Byt ut account till erat account id och region till regionen ni vill deploya till:
 
 ```javascript
 #!/usr/bin/env node
@@ -161,12 +166,16 @@ new InfraStack(app, "InfraStack", {
 - Kör `cdk deploy` för att deploya er kod. (Ni kommer få en fråga om ni vill godkänna. Skriv då y för att godkänna deployment)
 - När er deployment är klar kommer ni se en URL som output:
 
-  ![Alt](img/url.png "Title")
+  ![Alt](img/url.png)
 
   - Kopiera den och klistra in i er webläsare för att testa.
 
 ## Efter Deploy
 
-- Se till att radera alla era resurser när ni är klara:
+- Gå in i cloudformation i konsolen och kolla på era uppskapade resurser.
+- Se till att radera alla era resurser när ni är klara antingen via CDK eller via konsolen:
+- Kör `cdk destroy` för att radera era resurser.
 
-  ![Alt](img/delete.png "Title")
+Eller via konsollen:
+
+![Alt](img/delete.png "Title")
