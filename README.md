@@ -10,6 +10,7 @@ Uppgiften går ut på att skapa detta:
 
 ## Förberedelser
 
+- [CDK Dokumentation](https://docs.aws.amazon.com/cdk/v2/guide/home.html)
 - Kolla denna video för att refresha er förståelse av CDK: [CDK intro](https://www.youtube.com/watch?v=nlb8yo7SZ2I)
 - Kolla denna video för att refresha er förståelse av Cloudfront: [Cloudfront](https://www.youtube.com/watch?v=AT-nHW3_SVI)
 - Läs igenom pre req för CDK:
