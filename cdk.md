@@ -27,23 +27,23 @@ Målet med uppgiften är inte att ni ska lära er React. Detta är bara för exe
 
   - Väl inne i projektet behöver vi uppdatera vart det kompilerade projektet ska sparas. Detta görs i package.json. Lägg in detta under scripts: ` "build": "BUILD_PATH='infra/resources/build' react-scripts build"`
 
-    ![Alt](/packagejson.png "Title")
+    ![Alt](img/packagejson.png "Title")
 
 ## Initiera CDK
 
 - I roten av projektet behöver vi nu skapa en mapp där vår infrastruktur ska ligga -> skapa en mapp som heter infra
 
-  ![Alt](/infra.png "Title")
+  ![Alt](img/infra.png "Title")
 
 - Nu går vi in i infra mappen -> `cd infra`
 - Här behöver vi initiera en CDK-app -> `cdk init app --language typescript`
 - Då borde ni ha något som ser ut såhär:
 
-  ![Alt](/infrafolder.png "Title")
+  ![Alt](img/infrafolder.png "Title")
 
 - För att samla alla kompilerade filer som kommer när vi senare bygger projektet kan ni uppdatera tsconfig.json inuti infra-mappen med en out directory: `"outDir": "infra_build"`
 
-  ![Alt](/tsconfig.png "Title")
+  ![Alt](img/tsconfig.png "Title")
 
 - Inuti Infra-mappen går ni in i mappen lib. Här skapar ni en ny fil som heter deployment.ts och lägger in följande kod:
 
@@ -104,7 +104,7 @@ export class Deployment extends Construct {
 }
 ```
 
-![Alt](/deployments.png "Title")
+![Alt](img/deployments.png "Title")
 
 Vi skapar denna fil för att följa AWS best practice som säger att man ska bygga en Construct som kan återanvändas. [best practice](https://docs.aws.amazon.com/cdk/v2/guide/best-practices.html)
 Notera att vi sätter upp vår path till den byggda React-appen.
@@ -125,7 +125,7 @@ export class InfraStack extends cdk.Stack {
 }
 ```
 
-![Alt](/infrastack.png "Title")
+![Alt](img/infrastack.png "Title")
 
 - Sista steget är att uppdatera infra.ts i bin mappen med detta:
 
@@ -144,7 +144,7 @@ new InfraStack(app, "InfraStack", {
 });
 ```
 
-![Alt](/bin.png "Title")
+![Alt](img/bin.png "Title")
 
 ## Deploy
 
@@ -155,7 +155,7 @@ new InfraStack(app, "InfraStack", {
 - Kör `cdk deploy` för att deploya er kod. (Ni kommer få en fråga om ni vill godkänna. Skriv då y för att godkänna deployment)
 - När er deployment är klar kommer ni se en URL som output:
 
-  ![Alt](/url.png "Title")
+  ![Alt](img/url.png "Title")
 
   - Kopiera den och klistra in i er webläsare för att testa.
 
@@ -163,4 +163,4 @@ new InfraStack(app, "InfraStack", {
 
 - Se till att radera alla era resurser när ni är klara:
 
-  ![Alt](/delete.png "Title")
+  ![Alt](img/delete.png "Title")
