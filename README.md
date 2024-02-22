@@ -4,9 +4,14 @@
 
 Målet med uppgiften är inte att ni ska lära er React. Detta är bara för exempel så att ni har något att deploya. Vill ni bygga en roligare frontend är ni välkomna att göra det 😀
 
+Uppgiften går ut på att skapa detta:
+
+![Alt](img/layout.png)
+
 ## Förberedelser
 
-- Kolla denna video för att uppfirska er förståelse av CDK: [CDK intro](https://www.youtube.com/watch?v=nlb8yo7SZ2I)
+- Kolla denna video för att refresha er förståelse av CDK: [CDK intro](https://www.youtube.com/watch?v=nlb8yo7SZ2I)
+- Kolla denna video för att refresha er förståelse av Cloudfront: [Cloudfront](https://www.youtube.com/watch?v=AT-nHW3_SVI)
 - Läs igenom pre req för CDK:
   [pre req](https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html#getting_started_prerequisites).
 
@@ -27,7 +32,7 @@ Målet med uppgiften är inte att ni ska lära er React. Detta är bara för exe
 
   - Väl inne i projektet behöver vi uppdatera vart det kompilerade projektet ska sparas. Detta görs i package.json. Lägg in detta under scripts: ` "build": "BUILD_PATH='infra/resources/build' react-scripts build"`
 
-    ![Alt](img/packagejson.png "Title")
+    ![Alt](img/packagejson.png)
 
 ## Initiera CDK
 
